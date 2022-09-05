@@ -8,57 +8,69 @@
   top: 50%;
   left: 50%;
 
-  header {
+  @media (max-width: 640px) {
+    margin: 0.1rem;
+  }
+
+  .login-header {
     margin-bottom: 1rem;
 
-    h2 {
+    .login-title {
       width: fit-content;
       margin: auto;
+      user-select: none;
     }
   }
 
-  form {
+  .login-form {
     display: grid;
     gap: 1rem;
 
-    div {
+    .login-input-div {
       display: flex;
       align-items: center;
       padding: 0.4rem;
       border: #c6c6c6 1px solid;
       border-radius: 0.4rem;
 
-      label {
+      .login-label {
         padding-right: 0.4rem;
         border-right: #c6c6c6 2px solid;
         font-weight: bolder;
+        user-select: none;
       }
 
-      input {
+      .login-input {
         border: none;
         border-radius: 0.2rem;
-        height: 2rem;
-        width: 20rem;
         padding: 0.4rem;
 
         &:focus {
           outline: none;
         }
       }
+
+      .password-hide {
+        border-left: #c6c6c6 2px solid;
+        padding: 0 0.4rem;
+        align-items: center;
+        cursor: pointer;
+      }
     }
 
-    a {
+    .login-link {
       width: fit-content;
       margin: auto;
       text-decoration: underline;
       cursor: pointer;
+      user-select: none;
 
       &:hover {
         text-decoration: none;
       }
     }
 
-    button {
+    .login-submit {
       text-transform: uppercase;
       font-weight: bolder;
       height: 2rem;
@@ -68,6 +80,7 @@
       background: var(--green);
       cursor: pointer;
       transition: all 0.1s ease-in-out;
+      user-select: none;
 
       &:active {
         filter: brightness(95%);

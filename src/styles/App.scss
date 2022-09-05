@@ -1,0 +1,33 @@
+.login-container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: #FFFFFF;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem #000000;
+  top: 50%;
+  left: 50%;
+
+  form {
+    display: grid;
+    gap: 1rem;
+
+    input {
+      border: #c6c6c6 1px solid;
+      border-radius: 0.2rem;
+      height: 2rem;
+      width: 20rem;
+      padding: 0.4rem;
+    }
+
+    button {
+      text-transform: uppercase;
+      font-weight: bolder;
+      height: 2rem;
+      border: none;
+      border-radius: 0.2rem;
+      color: white;
+      background: var(--green);
+    }
+  }
+}

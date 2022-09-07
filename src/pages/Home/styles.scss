@@ -1,0 +1,140 @@
+.home-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: 0;
+        padding: 1rem 4rem;
+        width: 100vw;
+        background: green;
+        box-shadow: 0 0.3rem 1rem #000000;
+
+        @media (max-width: 640px) {
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .create-button {
+            padding: 0.2rem 1.2rem;
+            background: blue;
+            color: white;
+            font-weight: bolder;
+            border: none;
+            border-radius: 0.4rem;
+        }
+    }
+    
+    .body-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 4rem 0;
+
+        @media (max-width: 640px) {
+            flex-direction: column;
+            margin: 2rem 0;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            width: 30rem;
+
+            @media (max-width: 640px) {
+                width: 90vw;
+            }
+
+            h2 {
+                margin: auto;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .left-top {
+            .image {
+                width: 100%;
+            }
+        }
+
+        .right-bottom {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0.5rem 0.5rem 1rem #00000085;
+
+            @media (max-width: 640px) {
+                margin-top: 2rem;
+            }
+
+            form {
+                display: grid;
+                gap: 1rem;
+
+                .labeled-input {
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid #C6C6C6;
+                    border-radius: 0.2rem;
+                    padding: 0.8rem;
+    
+                    label {
+                        border-right: 2px solid #C6C6C6;
+                        padding-right: 0.4rem;
+                        margin-right: 0.4rem;
+                    }
+    
+                    input {
+                        width: 100%;
+                        border: none;
+                        outline: none;
+                    }
+
+                    .eye-icon {
+                        display: flex;
+                        align-items: center;
+                        margin-left: 0.4rem;
+                        padding: 0.2rem;
+                        cursor: pointer;
+                        border-radius: 0.2rem;
+
+                        &:active {
+                            background: #00000035;
+                        }
+                    }
+                }
+
+                a {
+                    margin: auto;
+                }
+
+                .login-button {
+                    color: white;
+                    background: green;
+                    border: none;
+                    border-radius: 0.2rem;
+                    padding: 0.8rem;
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+        background: green;
+        padding: 0.6rem;
+
+        @media (max-width: 640px) {
+            position: relative;
+        }
+    }
+}

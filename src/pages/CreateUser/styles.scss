@@ -1,0 +1,49 @@
+.dark-background {
+    background: #000000A5;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    position: fixed;
+
+    .popup-container {
+        display: grid;
+        gap: 1rem;
+        padding: 1.2rem;
+        border-radius: 1rem;
+        background: white;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        position: relative;
+        width: 30rem;
+
+        @media (max-width: 640px) {
+            width: 95%;
+        }
+
+        h2 {
+            margin: auto;
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+    }
+}
+
+.popup-button {
+    padding: 0.6rem;
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+    font-weight: bolder;
+}
+
+.create {
+    background-color: green;
+}
+
+.cancel {
+    background-color: red;
+}

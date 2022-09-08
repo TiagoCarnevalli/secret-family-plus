@@ -16,7 +16,6 @@
             font-weight: bolder;
             width: fit-content;
             transition: transform 150ms ease-in-out, font-size 150ms ease-in-out;
-            z-index: 10;
         }
 
         .focused {
@@ -30,6 +29,8 @@
             outline: none;
             transform: translateY(0.4rem);
             width: 100%;
+            background: transparent;
+            z-index: 5;
         }
     }
 

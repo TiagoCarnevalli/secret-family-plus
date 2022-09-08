@@ -12,6 +12,7 @@ export default function Home() {
     const [hide, setHide] = useState(true);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [creating, setCreating] = useState(false);
 
     async function handleLogin(e: React.FormEvent) {
         e.preventDefault();
@@ -28,10 +29,10 @@ export default function Home() {
 
     return (
         <div className='home-container'>
-            {<CreateUser />}
+            {creating && <CreateUser onClose={() => setCreating(false)} />}
             <header>
                 <h1>Parente Secreto</h1>
-                <button className='create-button'>Criar</button>
+                <button className='create-button' onClick={() => setCreating(true)}>Criar</button>
             </header>
             <div className='body-container'>
                 <div className='content left-top'>

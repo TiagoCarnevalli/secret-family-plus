@@ -10,6 +10,8 @@ interface LabeledInputProps {
     onChange: React.ChangeEventHandler<HTMLInputElement>;
     action?: any;
     actionFunction?: () => void;
+    required?: boolean;
+    mode?: React.HTMLAttributes<HTMLInputElement>;
 }
 
 export default function LabeledInput(props: LabeledInputProps) {
@@ -23,8 +25,8 @@ export default function LabeledInput(props: LabeledInputProps) {
                 key={props.key} 
                 className='input-content'
             >
-                <label className={`input-label ${inputed ? 'focused' : ''}`}>{props.label}</label>
-                <input
+                <label className={`input-label ${inputed ? 'focused' : ''}`}>{props.label}{props.required && <label style={{color: 'red'}}>*</label>}</label>
+                <input required={props.required || false}
                     className='input-input' 
                     type={props.type} 
                     value={props.value} 

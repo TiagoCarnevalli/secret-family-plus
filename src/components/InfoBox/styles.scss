@@ -1,0 +1,36 @@
+.info-container {
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+
+    @media (max-width: 640px) {
+        flex-direction: column;
+    }
+
+    .info-content {
+        display: grid;
+        gap: 0.4rem;
+    }
+
+    .middle-line {
+        background: #ccc;
+        height: auto;
+        width: 2px;
+    
+        @media (max-width: 640px) {
+            height: 2px;
+            width: auto;
+        }
+    }
+}
+
+.edit-button {
+    padding: 0.4rem 0.6rem;
+    border: none;
+    border-radius: 0.2rem;
+    color: #fff;
+    
+    &:last-child {
+        margin-left: 1rem;
+    }
+}

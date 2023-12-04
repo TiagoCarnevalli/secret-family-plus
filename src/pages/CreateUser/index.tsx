@@ -12,11 +12,12 @@ interface CreateUserProps {
 }
 
 export default function CreateUser(props: CreateUserProps) {
-    const [hide, setHide] = useState(false);
+    const [hide, setHide] = useState(true);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [cellphone, setCellphone] = useState('');
+    const [giftList, setGiftList] = useState('');
 
     async function handleCreate(e: React.FormEvent) {
         e.preventDefault();
@@ -25,9 +26,10 @@ export default function CreateUser(props: CreateUserProps) {
             .then(async ({ user }) => {
                 await setDoc(doc(dbFirestore, 'participantes', user.uid), {
                     name: name,
-                    callphone: cellphone,
+                    cellphone: cellphone,
                     email: email,
-                    giftList: []
+                    giftList: giftList,
+                    hiddenFriend: ""
                 });
                 props.onClose();
             })
@@ -74,6 +76,12 @@ export default function CreateUser(props: CreateUserProps) {
                         onChange={({ currentTarget }) => { setPassword(currentTarget.value) }} 
                         action={hide ? <FiEye size={'1.4rem'} /> : <FiEyeOff size={'1.4rem'} />}
                         actionFunction={() => { setHide(!hide) }}
+                    />
+                    <LabeledInput
+                        label={'Sugestões de Presentes'} 
+                        value={giftList} 
+                        type={'text'} 
+                        onChange={({ currentTarget }) => { setGiftList(currentTarget.value) }}
                     />
                     <button type='submit' className='popup-button create'>Criar</button>
                 </form>

@@ -7,7 +7,6 @@
     
     .input-content {
         position: relative;
-        padding: 0.8rem 0.6rem;
         width: 100%;
 
         .input-label {
@@ -15,11 +14,12 @@
             font-size: 1rem;
             font-weight: bolder;
             width: fit-content;
+            transform: translate(0.6rem, 0.7rem);
             transition: transform 150ms ease-in-out, font-size 150ms ease-in-out;
         }
 
         .focused {
-            transform: translateY(-0.6rem);
+            transform: translate(0.6rem, 0.1rem);
             font-size: 0.8rem;
         }
 
@@ -27,7 +27,7 @@
             position: relative;
             border: none;
             outline: none;
-            transform: translateY(0.4rem);
+            padding: 1.2rem 0.6rem 0.4rem;
             width: 100%;
             background: transparent;
             z-index: 5;

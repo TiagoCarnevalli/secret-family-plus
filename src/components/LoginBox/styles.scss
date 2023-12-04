@@ -1,0 +1,56 @@
+.login-box-container {
+    h2 {
+        text-align: center;
+    }
+
+    form {
+        display: grid;
+        gap: 1rem;
+
+        .labeled-input {
+            display: flex;
+            align-items: center;
+            border: 1px solid #C6C6C6;
+            border-radius: 0.2rem;
+            padding: 0.8rem;
+
+            label {
+                border-right: 2px solid #C6C6C6;
+                padding-right: 0.4rem;
+                margin-right: 0.4rem;
+            }
+
+            input {
+                width: 100%;
+                border: none;
+                outline: none;
+            }
+
+            .eye-icon {
+                display: flex;
+                align-items: center;
+                margin-left: 0.4rem;
+                padding: 0.2rem;
+                cursor: pointer;
+                border-radius: 0.2rem;
+
+                &:active {
+                    background: #00000035;
+                }
+            }
+        }
+
+        a {
+            margin: auto;
+        }
+
+        .login-button {
+            color: white;
+            background: green;
+            border: none;
+            border-radius: 0.2rem;
+            padding: 0.8rem;
+            font-weight: bolder;
+        }
+    }
+}

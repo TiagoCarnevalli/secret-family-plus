@@ -32,7 +32,7 @@ export default function LabeledInput(props: LabeledInputProps) {
                     value={props.value} 
                     onChange={props.onChange}
                     onFocus={() => { setInputed(true); setFocused(true) }}
-                    onBlur={() => { props.value.toString().length < 1 && setInputed(false); setFocused(false); }}
+                    onBlur={() => { props.value?.toString().length < 1 && setInputed(false); setFocused(false); }}
                 />
             </div>
             {props.action && <div className='input-action' onClick={props.actionFunction}>{props.action}</div> }

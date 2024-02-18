@@ -14,6 +14,7 @@ import {
     getDoc, 
     // getDocs, 
     updateDoc } from 'firebase/firestore';
+import InfoTable from '../../components/InfoTable';
 
 export default function Home() {
     const [creating, setCreating] = useState(false);
@@ -99,7 +100,8 @@ export default function Home() {
             </header>
             <div className='body-container'>
                 <div className='content left-top'>
-                    <img className='image' src='https://dbdzm869oupei.cloudfront.net/img/sticker/preview/14059.png' alt='Gifts' />
+                    {/* <img className='image' src='https://dbdzm869oupei.cloudfront.net/img/sticker/preview/14059.png' alt='Gifts' /> */}
+                    <InfoTable />
                 </div>
                 <div className='content right-bottom'>
                     {loggedUser !== null ? <InfoBox user={loggedUser} edit={(value: string) => handleEdit(value)} logout={() => handleLogout()} /> : <LoginBox login={handleLogin} />}

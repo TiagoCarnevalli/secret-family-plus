@@ -13,8 +13,8 @@ interface Props {
 
 export default function InfoBox(props: Props) {
     const [edit, setEdit] = useState(false);
-    const [auxGiftList, setAuxGiftList] = useState('');
-    const [auxHiddenFriend, setAuxHiddenFriend] = useState<any>();
+    const [giftList, setGiftList] = useState('');
+    const [hiddenFriend, setHiddenFriend] = useState<any>();
 
     useEffect(() => {
         loadHiddenFriend(props.user?.hiddenFriend || ' ')
@@ -23,11 +23,11 @@ export default function InfoBox(props: Props) {
     async function loadHiddenFriend(auxId: string) {
         let aux = await getDoc(doc(dbFirestore, 'participantes', auxId));
 
-        setAuxHiddenFriend(aux.data());
+        setHiddenFriend(aux.data());
     }
 
     function allowEdit() {
-        setAuxGiftList(props.user?.giftList);
+        setGiftList(props.user?.giftList);
         setEdit(true);
     }
 
@@ -42,8 +42,8 @@ export default function InfoBox(props: Props) {
                     </div>{edit ? <LabeledInput 
                         label=''
                         type='text'
-                        value={auxGiftList}
-                        onChange={({ currentTarget }) => setAuxGiftList(currentTarget.value)}
+                        value={giftList}
+                        onChange={({ currentTarget }) => setGiftList(currentTarget.value)}
                     /> :
                     <div style={{ paddingLeft: '1.2rem' }}>
                         {props.user?.giftList || <span>Sem sugestões</span>}
@@ -51,16 +51,16 @@ export default function InfoBox(props: Props) {
                     <div>
                     {edit &&
                     <>
-                        <button className='edit-button' style={{ background: '#0c0' }} onClick={() => {props.edit(auxGiftList); setEdit(false)}}>Salvar</button>
-                        <button className='edit-button' style={{ background: '#f00' }} onClick={() => {setAuxGiftList(''); setEdit(false)}}>Cancelar</button>
+                        <button className='edit-button' style={{ background: '#0c0' }} onClick={() => {props.edit(giftList); setEdit(false)}}>Salvar</button>
+                        <button className='edit-button' style={{ background: '#f00' }} onClick={() => {setGiftList(''); setEdit(false)}}>Cancelar</button>
                     </>}</div>
                 </div>
                 <div className='middle-line' />
                 <div className='info-content'>
-                    <div><strong>Amigo Secreto:&ensp;</strong><span>{auxHiddenFriend?.name || 'Sorteio ainda não realizado'}</span></div>
+                    <div><strong>Amigo Secreto:&ensp;</strong><span>{hiddenFriend?.name || 'Sorteio ainda não realizado'}</span></div>
                     <div><strong>Sugestões de Presentes:&ensp;</strong></div>
                     <div style={{ paddingLeft: '1.2rem' }}>
-                        {auxHiddenFriend?.giftList || (props.user?.hiddenFriend !== "" ? <span>Sem Sugestões</span> : <span>Sorteio ainda não realizado</span>)}
+                        {hiddenFriend?.giftList || (props.user?.hiddenFriend !== "" ? <span>Sem Sugestões</span> : <span>Sorteio ainda não realizado</span>)}
                     </div>
                 </div>
             </div>

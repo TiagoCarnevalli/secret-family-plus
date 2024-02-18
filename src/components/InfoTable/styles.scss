@@ -1,0 +1,47 @@
+.table-container {
+    overflow-y: auto;
+    max-height: 30rem;
+    width: 100%;
+    border-radius: 0.4rem;
+    box-shadow: 2px 2px 1rem black;
+    
+    .gifts-table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    
+        thead {
+            position: sticky;
+            top: 0;
+            background-color: green;
+        }
+    
+        th, td {
+            padding: 1rem;
+        }
+        
+        td {
+            text-align: left;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #c6c6c6;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba($color: green, $alpha: 0.4);
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-left: 0.1rem solid green;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 0.3rem;
+}
